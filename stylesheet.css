@@ -1,0 +1,86 @@
+@import url("https://use.typekit.net/oqx5jcr.css");/*Indsætning af font*/
+
+/*HELE CONTANIEREN*/
+figure.mig{ 
+  font-family: trade-gothic-next, sans-serif;/*Font*/
+  font-style: normal;/*Font*/
+  position: relative; /*Containerens placering*/
+  overflow: hidden; /*Gør indholdet udenfor usynlig*/
+  margin: 10px; /*Margin rundt om element*/
+  min-width: 250px; /*Minimum bredde*/
+  max-width: 350px; /*Maks bredde*/
+  width: 100%; /*Bredde 100%*/
+  color: #000000; /*Sort tekst*/
+  text-align: center; /*Tekst placeres i center*/
+  -webkit-perspective: 50em; /*Får hvid boks til at passe til billedet*/
+  perspective: 50em;/*Får hvid boks til at passe til billedet*/
+    -webkit-box-sizing: padding-box;/*Tilføjer padding rundt om container*/
+  box-sizing: padding-box; /*Tilføjer padding rundt om container*/
+  -webkit-transition: all 0.2s ease-out; /*Overgangseffekt (langsom til sidst) + længde*/
+  transition: all 0.2s ease-out; /*Overgangseffekt (langsom til sidst) + længde*/
+}
+
+/*TEKSTEN*/
+figure.mig figcaption {
+  top: 50%; /*Placerer teksten i midten*/
+  left: 20px; /*Tekst - 20px til venstre*/
+  right: 20px; /*Tekst - 20px til højre*/
+  position: absolute; /*Containerens placering*/
+  opacity: 0; /*Ingen gennemsigtighed på tekst*/
+  z-index: 1; /*Gør at teksten er øverst*/
+}
+
+/*STYLING AF "AMALIE SØRENSEN"*/
+figure.mig h2 {
+  font-weight: 300; /*Bogstavernes vægt*/
+  letter-spacing: 0.2em; /*Afstand mellem bogstaver*/
+  font-size: 23px; /*Skriftstørrelse*/
+    margin: 0; /*Ingen margin*/
+}
+
+/*STYLING AF "POSTERS BY HEART"*/
+figure.mig h4 {
+  font-weight: 300; /*Bogstavernes vægt*/
+  margin-bottom: 10px; /*Margin under h4*/
+  font-size: 16px; /*Skriftstørrelse*/
+}
+
+/*STYLING AF HVID BOKS UNDER HOVER*/
+figure.mig:after { 
+  background-color: #eae6e2; /*Sætter farven til hvid*/
+  position: absolute; /*Containerens placering*/
+  content: ""; /*Gør den hvide boks synlig*/
+  display: block;/*Gør det muligt at anvende top, left osv.*/
+  top: 25px; /*Margin rundt om hvid boks - top*/
+  left: 25px;/*Margin rundt om hvid boks - venstre*/
+  right: 25px;/*Margin rundt om hvid boks - højre*/
+  bottom: 25px;/*Margin rundt om hvid boks - bund*/
+  /*Ease-in animation*/
+  -webkit-transition: all 0.4s ease-in-out;/*Overgangseffekt (langsom til start og slut) + længde*/
+  transition: all 0.4s ease-in-out;/*Overgangseffekt (langsom til start og slut) + længde*/
+  -webkit-transform: rotateX(-90deg); /*Rotation på 90 grader*/
+  transform: rotateX(-90deg);/*Rotation på 90 grader*/
+  -webkit-transform-origin: 50% 50%; /*Sørger for rotation i midten*/
+  -ms-transform-origin: 50% 50%;/*Sørger for rotation i midten*/
+  transform-origin: 50% 50%;/*Sørger for rotation i midten*/
+}
+
+/*ANIMATION PÅ TEKST*/
+figure.mig:hover figcaption,
+figure.mig.hover figcaption {
+  -webkit-transform: translateY(-50%);/*Placerer teksten i midten*/
+  transform: translateY(-50%);/*Placerer teksten i midten*/
+  opacity: 1;/*Gør teksten synlig*/
+    
+  -webkit-transition-delay: 0.4s; /*Gør teksten forsinket ift. den hvide boks*/
+  transition-delay: 0.4s;/*Gør teksten forsinket ift. den hvide boks*/
+}
+
+/*ANIMATION AF HVID BOKS*/
+figure.mig:hover:after,
+figure.mig.hover:after {
+  -webkit-transform: rotateX(0);/*Sørger for rotation*/
+  transform: rotateX(0);/*Sørger for rotation*/
+  opacity: 0.7; /*Gennemsigtighed på hvid boks*/
+    }
+}
